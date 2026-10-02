@@ -1,6 +1,3 @@
-<?php
- 
-?>
 
 <!DOCTYPE html>
 <html>
@@ -12,6 +9,7 @@
 </head>
 
 <body class="container">
+    <?php if (isset($messagePourUtilisateur)) echo "Message : ".$messagePourUtilisateur; ?>
     <div class="row justify-content-center">
         <div class="col-md-4">
             <form id="formLogin" action="<?=BASE_URL?>public/index.php?route=traiterFormCo" method="post">

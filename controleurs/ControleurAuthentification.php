@@ -2,7 +2,7 @@
 
 class ControleurAuthentification{
 
-    public function coucou(){
+    public function afficherCoucou(){
         echo "coucou !";
     }
 
@@ -24,11 +24,13 @@ class ControleurAuthentification{
         $tabRes = $req->fetchAll(PDO::FETCH_ASSOC);
 
         if (count($tabRes)!=1){
+            $messagePourUtilisateur="J'te connais pas.<br>";
             include __DIR__."/../vues/VueFormCo.php";
             exit();
         }
 
         if (!password_verify($pass, $tabRes[0]["password"])){
+            $messagePourUtilisateur="Erreur de mdp.<br>";
             include __DIR__."/../vues/VueFormCo.php";
             exit();
         }
