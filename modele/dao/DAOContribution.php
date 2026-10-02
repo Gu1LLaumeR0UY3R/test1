@@ -36,4 +36,10 @@ class DAOContribution{
 
         return $tabContribs;
     }
+
+    public function persist($contrib){
+        // écriture de contrib dans la base
+        // insert : si c'est une nouvelle contrib
+        // update : si c'est une contrib existante
+    }
 }
