@@ -20,4 +20,17 @@ final class CoucouController extends AbstractController
             ],
         ]);
     }
+
+    #[Route('/lire-donnee', name: 'app_lire_donnee')]
+    public function lireDonnee(): Response
+    {
+        return $this->render(
+            'coucou/lire_donnee.html.twig', 
+            [
+            'controller_name' => 'CoucouController',
+            ]
+        );
+    }
+
 }
+
