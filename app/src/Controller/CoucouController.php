@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
+use Doctrine\ORM\EntityManagerInterface;
+use App\Entity\Groupe;
+
 final class CoucouController extends AbstractController
 {
     #[Route('/coucou', name: 'app_coucou')]
@@ -22,12 +25,15 @@ final class CoucouController extends AbstractController
     }
 
     #[Route('/lire-donnee', name: 'app_lire_donnee')]
-    public function lireDonnee(): Response
+    public function lireDonnee(EntityManagerInterface $em): Response
     {
+        $groupes = $em->getRepository(Groupe::class)->findAll();
+
         return $this->render(
-            'coucou/lire_donnee.html.twig', 
+            'coucou/lire_donnee.html.twig',
             [
-            'controller_name' => 'CoucouController',
+                'message' => 'Coucou les amis !',
+                'groupes' => $groupes,
             ]
         );
     }

@@ -6,7 +6,7 @@ use App\Repository\DetteRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: DetteRepository::class)]
+
 #[ORM\Table(name: 'dette')]
 #[ORM\UniqueConstraint(name: 'uq_dette_depense_debiteur', columns: ['depense_id', 'debiteur_id'])]
 class Dette

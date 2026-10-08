@@ -5,7 +5,7 @@ namespace App\Entity;
 use App\Repository\LigneDepenseRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: LigneDepenseRepository::class)]
+
 #[ORM\Table(name: 'ligne_depense')]
 class LigneDepense
 {

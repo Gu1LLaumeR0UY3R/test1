@@ -6,7 +6,7 @@ use App\Repository\ContributionRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: ContributionRepository::class)]
+
 #[ORM\Table(name: 'contribution')]
 #[ORM\UniqueConstraint(name: 'uq_contribution_appel_membre', columns: ['appel_id', 'membre_id'])]
 class Contribution

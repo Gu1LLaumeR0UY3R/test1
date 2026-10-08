@@ -8,7 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: AppelContributionRepository::class)]
+#[ORM\Entity()]
 #[ORM\Table(name: 'appel_contribution')]
 class AppelContribution
 {
